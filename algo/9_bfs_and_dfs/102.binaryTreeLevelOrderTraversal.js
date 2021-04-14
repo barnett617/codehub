@@ -14,3 +14,23 @@ var levelOrder = function(root) {
     }
     return res;
 }
+
+var levelOrder2 = function(root) {
+    const res = [];
+    if (!root) return res;
+    var helper = function(root, level) {
+        if (res[level]) {
+            res[level].push(root.val);
+        } else {
+            res[level] = [root.val];
+        }
+        if (root.left) {
+            helper(root.left, level + 1);
+        }
+        if (root.right) {
+            helper(root.right, level + 1);
+        }
+    }
+    helper(root, 0);
+    return res;
+}
