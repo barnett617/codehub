@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script src="https://unpkg.com/vue"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="history">
+      <div class="history-item" v-for="(item, index) of history" :key="index">{{item}}</div>
+    </div>
+    <div clas="item-add-wrap">
+      <input v-model="newItem" type="text">
+      <button @click="add">添加</button>
+    </div>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        history: [],
+        newItem: ''
+      },
+      created() {
+        this.getData();
+      },
+      methods: {
+        add() {
+          const api = 'http://127.0.0.1:8090/add';
+          const params = {
+            content: this.newItem
+          }
+          const option = {
+            method: 'POST',
+            body: JSON.stringify(params),
+            headers: new Headers({
+              'Content-Type': 'application/json'
+            })
+          }
+          fetch(api, option).then(res => {
+            if (res && res.status === 200) {
+              res.json().then(jsonRes => {
+                if (jsonRes.errno === 0) {
+                  this.getData();
+                  this.newItem = '';
+                }
+              })
+            }
+          })
+        },
+        getData() {
+          fetch('http://127.0.0.1:8090/list').then(res => {
+            if (res && res.status === 200) {
+              res.json().then(jsonRes => {
+                if (jsonRes.errno === 0 && jsonRes.data) {
+                  this.history = jsonRes.data;
+                }
+              })
+            }
+          })
+        }
+      }
+    })
+  </script>
+</body>
+</html>
