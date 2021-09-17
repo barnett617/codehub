@@ -1,47 +1,41 @@
-const MINIST_INTEGER = {
+const HALF_MINIST_INTEGER = {
   CODE: 0x80000000,
   VAL: -Math.pow(2, 31)
 }
 
-const HALF_MINIST_INTEGER = {
-  CODE: 0xc0000000,
-  VAL: -Math.pow(2, 30)
-}
-
 function divide(dividend, divisor) {
-  // js不区分整型和浮点型
-  // if (dividend == MINIST_INTEGER.VAL && divisor === -1) {
-  //   return Infinity;
-  // }
-
+  // 1.正数转负整
   let negative = 2;
   if (dividend > 0) {
     negative--;
-    // 正数转负数，防止越界
     dividend = -dividend;
   }
-
   if (divisor > 0) {
     negative--;
-    // 除数也转为负数，与被除数保持一致
     divisor = -divisor;
   }
-
+  // 2.计算
   let result = divideCore(dividend, divisor);
-  // 二者有一个负数，则结果为负数
-  return negative == 1 ? -result : result;
+  // 3.符号判断
+  return negative === 1 ? -result : result;
 
   function divideCore(dividend, divisor) {
+    // 1.记录结果
     let result = 0;
+    // 2.终止条件：被除数小于除数，因为二者都是负数
     while (dividend <= divisor) {
+      // 3.记录本次可减去的最大值
       let value = divisor;
+      // 4.记录本次的商值
       let quotient = 1;
-      while (value >= HALF_MINIST_INTEGER.VAL && dividend <= value + value) {
+      // 5.计算本次可减去的最大值
+      while (dividend <= value + value) {
         quotient += quotient;
         value += value;
       }
-
+      // 6.记录结果
       result += quotient;
+      // 7.被除数减去本轮最大除数
       dividend -= value;
     }
 
