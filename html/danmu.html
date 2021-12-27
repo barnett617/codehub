@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .wrapper {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      overflow-x: hidden;
+      background-color:aquamarine;
+    }
+    .group {
+      position: absolute;
+      z-index: 999;
+      max-height: 200px;
+      box-sizing: border-box;
+      overflow: hidden;
+      display: flex;
+    }
+    @keyframes group1act {
+      from {
+        transform: translate3d(20px, 0, 0);
+      }
+      to {
+        transform: translate3d(-2000px, 0, 0);
+      }
+    }
+    @keyframes group2act {
+      from {
+        transform: translate3d(165px, 0, 0);
+      }
+      to {
+        transform: translate3d(-2000px, 0, 0);
+      }
+    }
+    @keyframes group3act {
+      from {
+        transform: translate3d(265px, 0, 0);
+      }
+      to {
+        transform: translate3d(-2000px, 0, 0);
+      }
+    }
+    #group1 {
+      top: 20px;
+      left: 65px;
+      animation: group1act 20s infinite linear;
+    }
+    #group2 {
+      top: 60px;
+      left: 165px;
+      animation: group2act 18s infinite linear;
+    }
+    #group3 {
+      top: 100px;
+      left: 265px;
+      animation: group3act 15s infinite linear;
+    }
+    .group > div {
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      width: auto;
+      display: flex;
+      align-items: center;
+      margin-right: 250px;
+      padding: 2px 4px;
+      /* min-width: 200px; */
+    }
+    .group > div > img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+    .group > div > div {
+      display: inline-block;
+      max-height: 20px;
+      max-width: 400px;
+      min-width: 200px;
+      word-wrap: break-word;
+      margin-left: 2px;
+      margin-bottom: 2px;
+    }
+  </style>
+  <!-- <script src="./data.js"></script> -->
+  <!-- <script src="./data2.js"></script> -->
+</head>
+<body>
+  <div class="wrapper">
+    <div id="group1" class="group"></div>
+    <div id="group2" class="group"></div>
+    <div id="group3" class="group"></div>
+  </div>
+</body>
+<!-- <script src="./main.js"></script> -->
+<script>
+var userUsedDetail2 = [{
+  "nickName": "蒋宇翔",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqHRBxCzAHnrRmmXDVZem5pHYPPibU9fwLnzuqQbKxm1z1J4jeh2PDBeAlxj6PgiaMGwotnZglic3Wicg/132"
+}, {
+  "nickName": "酒酿不加圆子",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/vhUldbNDrgfeKkJYyunqSvU0kH07H2hJXCPgDiamhWx3ibv9WH5sP1JFNMGgk21ibc1d5uP3UovibRHWiahbBG3pMlA/132"
+}, {
+  "nickName": "\uD83D\uDD1A",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/ajNVdqHZLLBFN4iaZGdDreLaPelhgf2EujvciaFDwOqkVpPQYDUtfLGjyGia7MicazmBzdAW0ZEEVeBfEyt7I1r76Q/132"
+}, {
+  "nickName": "xx.",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/qZUnMibActoeqcOAEgXPhNVHM0XHhhE9LlYKNicORA0rNmoyqdCSADib4Kor8nGibAqdia4xICLmVqFjQeJE4j1QAZQ/132"
+}, {
+  "nickName": "Sun.",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqXRvKQibtSvuWME5uicxHyQmsfibgMlU3bzcI6icJy20wib4l3Z074EnNicHycTcpg5mkLML081LsZf9icw/132"
+}, {
+  "nickName": "静观瑜生",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJqdV5IrbdVp5dgqsZ36unYD37pibk1S84EqQgdicda5dmQymE5biafY77IQBVMAb9GibbbB6TF8PLWxw/132"
+}, {
+  "nickName": "龙哥哥",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q3auHgzwzM6IUL5GtCYuNC8Oy3eLDBV3qw0oGdm0Itb69ajMdjJOD7owDMEc5OlmoQYZ8mx1YGsJIWhaUM6fWw/132"
+}, {
+  "nickName": "小不點點",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLib4GiaK4KB3UoZD9HQAeiaDaDdibYWaWlauEtb8yZHumcdE6GrWI0OLusoaDdge9DJ5WjXEKCljwcKQ/132"
+}, {
+  "nickName": "小然",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIhH9ACDcvF0APlibkCibiaJDtZtyRdoOOcrRicc1mhC4a7vGmhs6wBneKSRdKbIwVSWP5D5iaiaHJGUZxg/132"
+}, {
+  "nickName": "豆豆",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Tw0DhkDjUULfkr52Nwb2MYCs0JuKAfnEXFyKlCIquReOWkQiaEAdLHhN1Pib46vae1sMrTGxTgS4cHhr1DbffYpg/132"
+}, {
+  "nickName": "hope",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKdcWLjLTJBuibyaicp1GxwUKbb00lmsDxPOqlicOjia7fJwjk9dYpicD09UfcJoq5b9JY6algjZZ1q6ng/132"
+}, {
+  "nickName": "十二",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/9oibmRU9kAW2aHq9mpLW2etH81GOwbHA0UbhrlcicNc1mGzSiaicjiaq6ojkdrtdCT80bFD0ibPrL7O2U2ic1h4f7ibicpQ/132"
+}, {
+  "nickName": "江小鱼",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/ajNVdqHZLLCW68Uk1fGxhxfdiaTsEqwDIbicj6DFakkeQbrbBM2X34j6zM6DLCJQJvrFpmibp3HXXiaibUQdyhXBNZQ/132"
+}, {
+  "nickName": "老江.Bosco",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eovsbm8LgVaoxVB4v4bDhBIiaLmia1bSfo6v6bgk26tArO1tCCSRYibJqKBYrU4bicicG9PyLqRkx83sRA/132"
+}, {
+  "nickName": "Sunnycoast",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/dMC5rtiazmITlSWA6cmqg0vaJnxWP6bjdWnTmunqqpnbgnCWIustaJbLw6NpAu6Xjr0jfOdibtncCXcTM5zAXYPQ/132"
+}, {
+  "nickName": "枫吹过的夏天",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/2VshAniajFTjshttw5Ad8j5pbw83wI8SRrXW78KYDINlGYgKgfNuSjdSAVYluvZ25PiaoJ9pBAaGrFszwr6E1K6w/132"
+}, {
+  "nickName": "miny",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/JDszbgydlMAj2V2pcGwr0mwrzktv78licZZJc5fv6KmiaKxvtKkl7dWKmLiayGZ7ucV1E1Z7Y6icQPumwoauZaseYA/132"
+}, {
+  "nickName": "嗏花破",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKzOaMIpbTBuicltSXpvTGLCvxus5CtqIQY1ZI7rqQzWJt4kDqoCCKKq1dKMvvb62tKNk3rMicEPMFA/132"
+}, {
+  "nickName": "雯. Miss卍",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Sw1CCf5xQPrzvDf9q3xoY0CqicIWuuBOnlP4H4wIu8WEBONdM1zsc7fdyl7jWlUwjZJPSO7cXt1B3RbpjVL0lEQ/132"
+}, {
+  "nickName": "张露尹",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83epe9CTZ73W3VsZft4Z1kSgNvZG1IV4eybzEhqJU2XJ84v3micBnQDSLiaXQq9xAZ9siacLMhoQPjkxjA/132"
+}, {
+  "nickName": "王海东",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqbcknRP3pnfBl0vcAelFGLUwWQnkOXFCiaRITqlKLtPiclsBcry2cqQcF1PSwQic7Xaw4F962hYsMIw/132"
+}, {
+  "nickName": "王利",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIOx2FOZQmszNhLTEOp7lbPjIxvp0aEv3xksfasjictECQBE8jl6oH8Cuoiauvv0nS5BVfhCLg5SAEw/132"
+}, {
+  "nickName": "大妹子",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/VpqrSv4HmjD2Ovnxr8r0HSzR2Wr4YPzkP2zF7XMNq4SPAeA88IVRPTLMiaWib6dexsIQhXmWqpGDdQyNGTzia66Ug/132"
+}, {
+  "nickName": "\uD83D\uDD31天平座的捷少\uD83D\uDD31",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83er2RuDvkxIkLia3rwBVhLSzibtI3AP9lRaCMQVnGJErBsc1uY4iazEBKUCHIO5yaRqfvTkMDXWYVLhqQ/132"
+}, {
+  "nickName": "陈蔚",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqzwYzVu4jk1ribUkF1xIicRyrSIgnt8Fia4ZvEgoYnEZhv5ictIcicntHZoILNFX4xLWcQJqyXftlVAog/132"
+}, {
+  "nickName": "Eric Lee",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoQN1CRicH9cicW0rQFZ5xAc9uzOLic2pfIOyoKQ701WdCI5gw9ibZ0XQe0Ycz49lrLJ4t71I0H6FS63g/132"
+}, {
+  "nickName": "稳稳的幸福",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLFPV3ediaiaH2oW0HKdvo3AWAC8GP7SicZoUCDya542iaSMQW2NAHVjYGz4cZCrRBHuwBts3iaZou15xw/132"
+}, {
+  "nickName": "文武",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqPdTQtE0TBcCwJQmVJrnDtdZhEbQMP2z2IgVKeKb83W9ricbXunz44rEGRCIOLvicicibyWCoyQY7DOA/132"
+}, {
+  "nickName": "岳继锋",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTI3PVcVQXH38KYiaQoYfZL573gWM8AKiaTKOPWKIA89AVribOMMEyGPrmzvapbeKwQ8BlSYR2dHU5Ryg/132"
+}, {
+  "nickName": "米象",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIwb0Vib1Ziba9HhtibKuBuzMFZwcnKYHiaHbzB0iavicagNb39ibicicchSxdlH11ibOo0lTGViaxfQib1uPA8Fw/132"
+}, {
+  "nickName": "钟嫱\uD83C\uDF1D",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqxic3NFtOiaicCazmxGh9SZe3q3gric5AmMbLjE5XF8BgHOgIm07x2z5JxIkoTlc6mTa2QwHXnTicL0Sw/132"
+}, {
+  "nickName": "团子",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/ticGhAIdjcBa9ic2nmA04j690FdOoxNJlSMg0TTlJzXTiatbFLYlCzk4YicewPDEQODcPYvDCo4VDASzKef88zZyTg/132"
+}, {
+  "nickName": "linsiiuu",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/3n2qRjOwRDS8lEXToQ47YpZEBeEspLMLOr3WxxLYHUriaZNR7FFvVve0AEswPmoHtd8VqiaVcSdpnFFiaACUm3lRg/132"
+}, {
+  "nickName": "\uD83C\uDF40Lucky\uD83C\uDF40",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqfmOjicgFib30TemVZ3zESCtEanVUmNSYOHcIATcYPSldrA3EsWLdf5owdYaHiaHSrcVPVTD0cfgm9w/132"
+}, {
+  "nickName": "张娟",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoQkMEXbsBBmrfbOxGoYiaRHUyNqKmh7SxwnsEuhMlU9FkPzVibWEdVHf3LsAj5tmgINxrE6jo03akw/132"
+}, {
+  "nickName": "Angelina_001",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKibXx0LiafrBsajeCfiaMKl1bVLy0tpictdlMtjoZIRE1C6mzQcM4bwia6JZUfRlCQ8Bq1hHCzR5JdKoA/132"
+}, {
+  "nickName": "蔡凯飞",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoRsudUJDggowamSeYnG6ibNvr4WYGF0S1GUOpoFFiaEvMYoQRov8dPtvlOuVWvKaWkeMOHH99Y3fNw/132"
+}, {
+  "nickName": "王兆强",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/vxoj1qtu5mcJbtAJZJtNVQPQL5mNp8L2HDZfPHSMBDmxcSF6F8Dc2HibA4odHmibFOzfFGibYsfrQ38Dr5gH4ojHg/132"
+}, {
+  "nickName": "StarR_",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/3ulW5xoGhukJfcOqIRwiaqcfKEa1Y81qb8nuOCK9upw3t95eVAw7fASMib9767u4MhBnfPFt7ibglu0jxMH3ibx5fg/132"
+}, {
+  "nickName": "蒋宇翔",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqHRBxCzAHnrRmmXDVZem5pHYPPibU9fwLnzuqQbKxm1z1J4jeh2PDBeAlxj6PgiaMGwotnZglic3Wicg/132"
+}, {
+  "nickName": "李皓Max",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/mtM8tzyn2MbCwy2ROGPO5rF7DaiciajibKWxCIeZUfibiblQvpsg9YxJpMr8KpX77nF7Px2vAia5o1ZRuic06cfm8cdJg/132"
+}, {
+  "nickName": "蓝调",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTITC7oPqbDxV6Shh21WE5gH410yGqAo7CXftTJLo1o1XPd0t4owjFZMhJjX2NaUIwkudiaL98iaJQsw/132"
+}, {
+  "nickName": "张时钦",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJdAAGVU1MRfUQhVTE3myGyQA8pl1icch1xWkqpjoGmBJeFLicRkTrgRcXHrUAlwxn1fmxnjmSIv6Fg/132"
+}, {
+  "nickName": "独钓寒江雪",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83erH6tkhwYNwdDJL1SOEriaiaLT9YNIIDhufZhkplxhk8CibC04F6nbbXaOzRB6xoja0tOz0PP3XbwmiaQ/132"
+}, {
+  "nickName": "珺",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIMyOLroT3koKsoxFgSu5WW7MibHXfX6kTSzqYBNay49QZy2Ymc2vib2dibkqrw3EdeuN2LvWqfaFxicA/132"
+}, {
+  "nickName": "大超儿",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqHqw9gU7QzTm6ANf7rEoDINfktpX0BibXhh2ibQWepNh1sdC0ric1gye8s1HFMFtDgAB3NkkXiacYEBQ/132"
+}, {
+  "nickName": "阿宝\uD83C\uDF48",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/PiajxSqBRaEL5wxEF6JYPd4EgBVFBczIfXj2zgw5W1h7vibeeTlzyVuf3Wib5EsCbnMv8duwYQKya58T9iaC66VCjA/132"
+}, {
+  "nickName": "Carol.\uD83D\uDC30",
+  "headImage": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJcUaibs6zH9LVRtLvG6rcT7HaxYbPEdiazyhfWC9X62Gy6umjEoZSNWJ183ibLY2ibrBevEOgaVC8Xsg/132"
+}]
+</script>
+<script>
+const group1 = userUsedDetail2.slice(0, 16)
+const group2 = userUsedDetail2.slice(16, 32)
+const group3 = userUsedDetail2.slice(32, 48)
+const groups = [group1, group2, group3];
+groups.forEach((group, index) => {
+  group.forEach(item => {
+    const div = document.createElement('div');
+    const avatar = document.createElement('img');
+    avatar.setAttribute('src', item.headImage);
+    const text = document.createElement('div');
+    text.innerText = `${item.nickName}领到租车券一张`;
+    div.appendChild(avatar);
+    div.appendChild(text);
+    const groupDom = document.getElementById(`group${index + 1}`)
+    groupDom.appendChild(div)
+  })
+})
+</script>
+</html>
