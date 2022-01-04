@@ -1,4 +1,4 @@
-const executor = require('../../utils/testRunner')
+const { calc } = require('../../utils/testRunner')
 const solution1 = require('./solution1.js')
 
 const testcase = [
@@ -12,4 +12,4 @@ const testcase = [
   }
 ]
 
-executor(testcase, solution1)
+calc(testcase, solution1)

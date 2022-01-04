@@ -1,4 +1,4 @@
-const calc = require('../../utils/testRunner')
+const { calc } = require('../../utils/testRunner')
 const bottomUp = require('./1-bottom-up')
 const topDown = require('./2-top-down')
 const bottomUpOptimize = require('./3-bottom-up-optimize')

@@ -1,4 +1,4 @@
-const calc = require('../../utils/testRunner')
+const { calc } = require('../../utils/testRunner')
 const solution1 = require('./solution1')
 
 const testcase = [
