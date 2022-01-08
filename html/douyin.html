@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    function genVideos() {
+      const videoList = [
+          {
+              "fileId": "1872dc2bd03344949dd18ae998b93d33",
+              "videoId": "v0200fg10000c798aojc77u7330fo34g"
+          },
+          {
+              "fileId": "076ae7efc03e4c9bada4533edfbd846d",
+              "videoId": "v0300fg10000c7bg1bjc77u4t18k78sg"
+          },
+          {
+              "fileId": "484d6ac570f1432cb1ff3d7857ef9d78",
+              "videoId": "v0d00fg10000c6piphjc77u9mnnd0kbg"
+          },
+          {
+              "fileId": "f1ec280df8644071bdb00c1a17024407",
+              "videoId": "v0300fg10000c7btesbc77ufvd2i5ha0"
+          },
+          {
+              "fileId": "b2413e4880724a68a1915104983385e8",
+              "videoId": "v0200fg10000c7btom3c77u641ake2ug"
+          }
+      ]
+      const videos = videoList.map(item => {
+        return `https://www.douyin.com/aweme/v1/play/?aid=6383&app_name=aweme&channel=channel_pc_web&device_platform=web&did=0&file_id=${item.fileId}&fp=verify_ky4dbemk_I0GMyhww_V6Yx_4zxX_9Rwd_YRjvcXdkVBjU&is_play_url=1&line=0&referer=https%3A%2F%2Fwww.google.com%2F&sign=63fd412d5265dc2743a488362027f09b&source=PackSourceEnum_FEED&target=7050023219323047201&user_agent=Mozilla%2F5.0%20%28Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F96.0.4664.110%20Safari%2F537.36&video_id=${item.videoId}&webid=7050438347827889700`
+        // https://v26-web.douyinvod.com/d87ff33967ff352c096c00583919d23e/61d87ab1/video/tos/cn/tos-cn-ve-15-alinc2/cc624536757c49878a52e237bf3c1b70/?a=6383&br=1294&bt=1294&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=OyFYlOZZI0J.17Tz7Th9D8FxuhsdW9GNHqY&l=&lr=&mime_type=video_mp4&net=0&pl=0&qs=0&rc=ajxxbDU6ZjNlOjMzNGkzM0ApPDQ3OTk2MztkN2Q4N2ZkPGdrMGVjcjRvYl9gLS1kLTBzc2MxYy9gXzY0XjNhY14uYjY6Yw%3D%3D&vl=&vr=
+      })
+      const root = document.getElementById('root');
+      const doms = videos.map(video => {
+        const dom = document.createElement('video');
+        dom.src = video;
+        dom.width = 600;
+        dom.autoplay = 'autoplay'
+        dom.controls = 'controls';
+        dom.style.margin = '20px';
+        root.appendChild(dom);
+        return dom;
+      })
+    }
+    genVideos();
+  </script>
+</body>
+</html>
