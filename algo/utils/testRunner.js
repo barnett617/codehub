@@ -1,9 +1,9 @@
-function calc(testcase, solution) {
+function calc(testcase, solution, forceFormat) {
   const output = [];
   testcase.forEach(test => {
     const ans = solution(test.input);
     output.push({
-      input: dataFormatter(test.input),
+      input: dataFormatter(test.input, forceFormat),
       expect: dataFormatter(test.expect),
       output: dataFormatter(ans)
     })
