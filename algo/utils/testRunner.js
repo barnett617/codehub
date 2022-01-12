@@ -34,8 +34,9 @@ function calcOperateType(testcase, solution) {
 }
 
 function dataFormatter(data, forceStringify = false) {
-  const arrayDataTooMuch = Array.isArray(data) && data.length > 3;
-  if (forceStringify || arrayDataTooMuch) {
+  const arrayDataTooMuch = Array.isArray(data) && data.length > 2;
+  const nestedArray = Array.isArray(data) && Array.isArray(data[0]);
+  if (forceStringify || arrayDataTooMuch || nestedArray) {
     return JSON.stringify(data);
   }
   return data;
