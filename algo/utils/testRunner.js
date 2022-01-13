@@ -1,7 +1,13 @@
 function calc(testcase, solution, forceFormat) {
   const output = [];
   testcase.forEach(test => {
-    const ans = solution(test.input);
+    let ans
+    const inputType = Object.prototype.toString.call(test.input);
+    if (inputType === '[object Object]') {
+      ans = solution(...Object.values(test.input))
+    } else {
+      const ans = solution(test.input);
+    }
     output.push({
       input: dataFormatter(test.input, forceFormat),
       expect: dataFormatter(test.expect),
