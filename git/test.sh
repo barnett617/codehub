@@ -1,1 +1,1 @@
-git config --global alias.acm=
+git config --global alias.acm '!f() { git add . && git commmit -m "$(echo $@)" }; f'
