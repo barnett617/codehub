@@ -1,3 +1,7 @@
+// 继承
+// a函数继承b函数 Object.create
+// map和hashMap，性能区别
+
 function TreeNode(id, children) {
     this.id = id;
     this.children = children || [];
