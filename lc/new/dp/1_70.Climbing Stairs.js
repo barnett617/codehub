@@ -17,3 +17,13 @@ function climbStairs(n) {
     }
     return two;
 }
+
+function climbStairs(n) {
+    if (n <= 2) return n;
+    let dp1 = 1;
+    let dp2 = 2;
+    for (let i = 3; i <= n; i++) {
+        [dp1, dp2] = [dp2, dp1 + dp2];
+    }
+    return dp2;
+}
