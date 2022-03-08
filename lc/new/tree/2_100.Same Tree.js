@@ -3,6 +3,7 @@
 // 思路：比较当前节点的结构和值，然后递归比较其左右子树
 // TIME: O(n)
 // SPACE: O(n)
+
 function isSameTree(p, q) {
     if (!p && !q) return true;
     if (!p || !q) return false;
