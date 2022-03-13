@@ -12,6 +12,7 @@
 - https://osjobs.net/topk/%E5%BE%AE%E8%BD%AF/
 - [huahuajiang](https://docs.google.com/spreadsheets/d/1SbpY-04Cz8EWw3A_LBUmDEXKUMO31DBjfeMoA0dlfIA/edit#gid=0)
 - [blind 75](https://docs.google.com/spreadsheets/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/edit#gid=0)
+- [Copy of LeetCode Solution for Facebook](https://www.notion.so/4a2872c685da44b5a377a5f939314f18)
 
 ### Articles
 
