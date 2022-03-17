@@ -5,24 +5,27 @@
 // 使用绝对值进行计算，最后要对负数情况处理
 
 function divide(dividend, divisor) {
-    const smallest = -(2 ** 31);
-    if (dividend === smallest && divisor === -1) {
-        return 2 ** 31 - 1;
-    }
-
-    let a = Math.abs(dividend), b = Math.abs(divisor);
+    const MAX = 2 ** 31 - 1;
+    const MIN = (-2) ** 31;
+    if (dividend === MIN && divisor === -1) return MAX;
+    let a = Math.abs(dividend);
+    let b = Math.abs(divisor);
     let res = 0;
     while (a >= b) {
         let temp = b;
         let multiply = 1;
         while (a >= temp) {
+            // calc this round minus
             a -= temp;
+            // double divisor
             temp += temp;
+            // calc this round res
             res += multiply;
+            // double res
             multiply += multiply;
         }
     }
-    if (dividend < 0 && divisor >= 0) res = -res;
-    if (dividend >= 0 && divisor < 0) res = -res;
+    if (dividend < 0 && divisor > 0) return -res;
+    if (dividend > 0 && divisor < 0) return -res;
     return res;
 }
