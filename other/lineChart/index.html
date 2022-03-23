@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LineChart</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        canvas {
+            background: white;
+        }
+
+        #tooltip {
+            position: absolute;
+            z-index: 2;
+            background: white;
+            padding: 10px;
+            border-radius: 2px;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tooltip"></div>
+    <canvas id="canvas" width="600" height="600"></canvas>
+    <script type="module">
+        import { LineChart } from './lineChart.js'
+        const lineChart = new LineChart()
+        const option = {
+            xAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            yAxis: {
+                type: 'value',
+                data: ['0', '50', '100', '150', '200', '250', '300']
+            },
+            series: [
+                {
+                    type: 'line',
+                    data: [150, 230, 224, 224, 135, 147, 260],
+                    lineColor: 'red'
+                },
+                {
+                    type: 'dashLine',
+                    data: [60, 140, 124, 94, 35, 47, 160],
+                    lineColor: 'green'
+                }
+            ],
+            lineType: 'dashLine'
+        }
+        lineChart.setOption(option)
+    </script>
+</body>
+
+</html>
+
+<!-- highcharts
+draw.io -->
+
+<!-- 拖拽 自己实现，开源 -->
+<!-- 业务集成：流程图+n个表单 -->
+<!-- 用户主要为开发者：机器学习工程师、数据科学家 -->
+<!-- 文档英文 -->
