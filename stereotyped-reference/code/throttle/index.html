@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>限流示例</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    .wrap {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .control-group {
+      height: 100%;
+      background-color: aquamarine;
+      flex: 1;
+    }
+    .treatment-group {
+      height: 100%;
+      background-color:chocolate;
+      flex: 1;
+    }
+    .btn-group {
+      display: flex;
+    }
+    .btn {
+      margin: auto;
+      margin-top: 20px;
+      width: 200px;
+      height: 120px;
+      line-height: 120px;
+      font-size: 18px;
+      text-align: center;
+      background-color: cornflowerblue;
+      border: 1px solid grey;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .clear {
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      cursor: pointer;
+      background-color: dimgray;
+    }
+    .content {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="control-group">
+      <div class="btn-group">
+        <div class="btn" onclick="order()">抢购</div>
+        <div class="clear" onclick="clearOrder()">清空</div>
+      </div>
+      <div class="content" id="control-group-content"></div>
+    </div>
+    <div class="treatment-group">
+      <div class="btn-group">
+        <div class="btn" onclick="throttledOrder()">限流抢购</div>
+        <div class="clear" onclick="clearTreat()">清空</div>
+      </div>
+      <div class="content" id="treatment-group-content"></div>
+    </div>
+  </div>
+  <script>
+    let orderCount = 0;
+    let throttleCount = 0;
+    const controlWrap = document.getElementById('control-group-content');
+    const treatmentWrap = document.getElementById('treatment-group-content');
+    function order() {
+      const sub = document.createElement('div');
+      orderCount++;
+      sub.innerHTML = `第${orderCount}次抢购，发生于${new Date()}`;
+      controlWrap.appendChild(sub);
+    }
+    function clearOrder() {
+      controlWrap.innerHTML = ''
+      orderCount = 0;
+    }
+    function treatmentOrder() {
+      const sub = document.createElement('div');
+      throttleCount++;
+      sub.innerHTML = `第${throttleCount}次抢购，发生于${new Date()}`;
+      treatmentWrap.appendChild(sub);
+    }
+    function clearTreat() {
+      treatmentWrap.innerHTML = '';
+      throttleCount = 0;
+    }
+    function throttle(fn, wait) {
+      let timer;
+      return function() {
+        if (timer) return;
+        timer = setTimeout(() => {
+          fn();
+          clearTimeout(timer);
+          timer = null;
+        }, wait)
+      }
+    }
+    throttledOrder = throttle(treatmentOrder, 1000);
+  </script>
+</body>
+</html>
