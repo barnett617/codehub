@@ -1,5 +1,9 @@
 # Handy Note
 
+github pages 历史部署：https://barnett617.github.io/doc/
+
+> 貌似github pages会给每个账号分配一个容器用于放置静态站点的部署，每次push会更新站点，但repo的删除并不会导致该目录的部署内容也一并删除。因此当某个repo删除后，该repo所关联的静态站点仍会存在
+
 ## [homebrew加速](https://learnku.com/articles/18908)
 
 替换brew.git、homebrew-core.git地址为阿里巴巴下镜像下的仓库
