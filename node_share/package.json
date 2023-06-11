@@ -1,0 +1,29 @@
+{
+  "name": "node_share",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barnett617/node_share.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barnett617/node_share/issues"
+  },
+  "homepage": "https://github.com/barnett617/node_share#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "got": "^7.1.0",
+    "mysql": "^2.16.0",
+    "superagent": "^3.7.0"
+  }
+}
