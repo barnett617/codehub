@@ -1,0 +1,16 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1.两数之和.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test\\binary-search.spec.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
