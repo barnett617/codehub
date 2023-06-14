@@ -1,0 +1,64 @@
+# vue-basic-points
+
+[![Build Status](https://travis-ci.com/barnett617/vue-basic-points.svg?branch=main)](https://travis-ci.com/barnett617/vue-basic-points)
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Test and Coverage
+```
+npm run test:unit
+```
+
+## Architecture
+
+- vue
+- vue-router
+- scss/sass
+- jest
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Config
+
+account.js
+```js
+const account = {
+  ak: '',
+  api: 'ip:port',
+  deployUrl: 'http://ip:port/'
+}
+
+export {
+  account
+}
+```
+
+account.common.js
+```js
+const account = {
+  ak: '',
+  api: 'ip:port',
+  deployUrl: 'http://ip:port/'
+}
+
+module.exports.account = account
+```
