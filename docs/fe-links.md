@@ -44,7 +44,6 @@
 
 - [正确的安装和使用nvm](https://www.jianshu.com/p/1d3430c427ef)
 
-
 # 常见疑惑
 
 - [option请求](https://stackoverflow.com/questions/1256593/why-am-i-getting-an-options-request-instead-of-a-get-request)
@@ -64,3 +63,7 @@
 - [图片网站](https://unsplash.com/)
 - [AST](https://esprima.org/demo/parse.html)
 - [搜索库的ts声明文件](https://microsoft.github.io/TypeSearch/)
+
+# 优秀博客
+
+- [faga's blog](https://www.faga.cc/)
