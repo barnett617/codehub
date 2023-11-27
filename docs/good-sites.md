@@ -1,6 +1,10 @@
 # good-sites
 Some good sites bookmarks
 
+## 博客
+
+- [html5动画示例](http://gnipbao.github.io/h5-test/menu.html)
+
 ## Vue component
 
 - [vue3 component](https://medium.com/swlh/my-first-vue3-component-6e1ef1670544)
@@ -17,12 +21,6 @@ Some good sites bookmarks
 - [世界方言论坛](https://forum.wordreference.com/)
 - [说你胖，你还喘上了](https://forum.wordreference.com/threads/%E8%AF%B4%E4%BD%A0%E8%83%96%E4%BD%A0%E8%BF%98%E5%96%98%E4%B8%8A%E4%BA%86.3601287/)
 - [Anyu Zhang (张安宇)](https://www.worldcubeassociation.org/persons/2012ZHAN08)
-
-## 博客
-
-- [http://hotu.co/cv/](http://hotu.co/cv/)
-- [html5动画示例](http://gnipbao.github.io/h5-test/menu.html)
-- [https://www.w3cschool.cn/cuhkj/cuhkj-lf832655.html](https://www.w3cschool.cn/cuhkj/cuhkj-lf832655.html)
 
 ## 文章
 
