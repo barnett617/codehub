@@ -4,6 +4,7 @@ Some good sites bookmarks
 ## 博客
 
 - [html5动画示例](http://gnipbao.github.io/h5-test/menu.html)
+- https://github.com/fghrsh/live2d_api
 
 ## Vue component
 
