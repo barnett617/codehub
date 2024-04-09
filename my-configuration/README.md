@@ -33,3 +33,7 @@
 ## Shell
 
 - [oh-my-zsh](https://ohmyz.sh/)
+
+## Screen Saver
+
+- [Aerial](https://aerialscreensaver.github.io/)
