@@ -1,62 +1,8 @@
 # Handy Note
 
-github pages 历史部署：https://barnett617.github.io/doc/
+github pages 历史部署：<https://barnett617.github.io/doc/>
 
 > 貌似github pages会给每个账号分配一个容器用于放置静态站点的部署，每次push会更新站点，但repo的删除并不会导致该目录的部署内容也一并删除。因此当某个repo删除后，该repo所关联的静态站点仍会存在
-
-## [homebrew加速](https://learnku.com/articles/18908)
-
-替换brew.git、homebrew-core.git地址为阿里巴巴下镜像下的仓库
-```
-cd "$(brew --repo)"
-git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
-
-cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
-git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
-```
-
-如果需要还原为原仓库则如下
-```
-cd "$(brew --repo)"
-git remote set-url origin https://github.com/Homebrew/brew.git
-
-cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
-git remote set-url origin https://github.com/Homebrew/homebrew-core.git
-```
-
-修改homebrew-bottles访问地址
-
-先查看本机shell
-```
-echo $SHELL
-```
-
-如果是/bin/zsh则
-```
-echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles' >> ~/.zshrc
-source ~/.zshrc
-```
-
-还原方式为
-```
-vi ~/.zshrc
-删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置
-source ~/.zshrc
-```
-
-如果是/bin/bash则
-
-```
-echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles' >> ~/.bash_profile
-source ~/.bash_profile
-```
-
-还原方式为
-```
-vi ~/.bash_profile
-删除 HOMEBREW_BOTTLE_DOMAIN 这一行配置
-source ~/.bash_profile
-```
 
 ## 好的资源网站
 
@@ -72,22 +18,22 @@ source ~/.bash_profile
 
 ### idea2018 active code
 
-```
+```sh
 http://idea.lanyus.com/
 ```
 
 ### IDEA crack
 
-- https://www.jianshu.com/p/3c87487e7121
-- http://idea.lanyus.com/
-- https://www.jianshu.com/p/3c87487e7121
-- https://www.liangzl.com/get-article-detail-114916.html
+- <https://www.jianshu.com/p/3c87487e7121>
+- <http://idea.lanyus.com/>
+- <https://www.jianshu.com/p/3c87487e7121>
+- <https://www.liangzl.com/get-article-detail-114916.html>
 
 ### vscode避免打开新的文件覆盖当前文件
 
 > 因为默认设置是预览文件，需要把预览文件设置为false
 
-```
+```sh
 "workbench.editor.enablePreview": false
 ```
 
@@ -95,17 +41,17 @@ http://idea.lanyus.com/
 
 ### 查看端口占用
 
-```
+```sh
 netstat -lnp | grep 3306
 ```
 
-```
+```sh
 netstat -tunlp | grep 18706
 ```
 
 显示如下
 
-```
+```sh
 tcp        0      0 0.0.0.0:18706           0.0.0.0:*               LISTEN      15957/python        
 udp        0      0 0.0.0.0:18706           0.0.0.0:*                           15957/python
 ```
@@ -113,9 +59,11 @@ udp        0      0 0.0.0.0:18706           0.0.0.0:*                           
 ### 命令解读
 
 #### which&where
+
 - [which & whereis](https://superuser.com/questions/40301/which-whereis-differences)
 
 #### /usr/bin和/usr/local/bin区别
+
 - [/usr/bin & /usr/local/bin](https://unix.stackexchange.com/questions/259231/difference-between-usr-bin-and-usr-local-bin)
 
 ### 多机器部署
@@ -134,36 +82,37 @@ cat /etc/shells
 
 2. Set zsh as the default shell
 
-```
+```sh
 chsh -s /usr/local/bin/zsh
 ```
 
 3. (Optional)If you want to configure zsh mannually, use
 
-```
+```sh
 vim ~/.zshrc
 ```
 
 4. After change `.zshrc`, do remember to `source` it to make it work
 
-```
+```sh
 source ~/.zshrc
 ```
 
 5. (Restore default shell)
 
-```
+```sh
 chsh -s /bin/bash
 ```
 
 ### Java默认Home
-```
+
+```sh
 /Library/Java/JavaVirtualMachines
 ```
 
 ### 锁屏快捷键
 
-```
+```sh
 control+command+q
 ```
 
@@ -174,13 +123,13 @@ control+command+q
 ## Vim
 
 ### 显示行数
-```
+
+```sh
 :set nu!
 ```
 
 ### 跳到文件头或文件尾
 
-```
 跳到文件头
 
 :1 或 gg
@@ -188,14 +137,11 @@ control+command+q
 跳到文件尾
 
 :$ 或 G （大写。当前若大小写锁定直接按g，未锁定则按shift+g）
-```
 
 ### 单行及多行删除
 
-```
 单行删除，：1（待删除行）d
 多行删除 ，：1,10d（删除从第1到第10行）
-```
 
 光标所在行dd则删除光标所在行
 
@@ -205,40 +151,40 @@ control+command+q
 
 1. 查看配置
 
-```
+```sh
 git config --list
 ```
 
 2. 初始化用户和邮箱
 
-```
+```sh
 git config --global user.name "your name"
 git config --global user.email your email
 ```
 
 ### 删除本地和远程分支
 
-https://qiita.com/hudichao/items/d665cd769ed1d2ce832a
+<https://qiita.com/hudichao/items/d665cd769ed1d2ce832a>
 
 ### 本地生成ssh key并放在远端以实现SSH访问
 
 1. Generate a ssh key locally
 
-```
+```sh
 ssh-keygen -o
 ```
 
 2. Catch your key just generated before
 
-```
+```sh
 cat ~/.ssh/id_rsa.pub
 ```
 
 3. Put it into your ssh keys in your romote repository
 
-4. Or copy the local already exist ssh key to clipboard directly(for macOS, https://www.manpagez.com/man/1/pbcopy/)
+4. Or copy the local already exist ssh key to clipboard directly(for macOS, <https://www.manpagez.com/man/1/pbcopy/>)
 
-```
+```sh
 pbcopy < ~/.ssh/id_rsa.pub
 ```
 
@@ -246,7 +192,7 @@ pbcopy < ~/.ssh/id_rsa.pub
 
 #### 存储全局账号
 
-```
+```sh
 git config --global credential.helper wincred
 ```
 
@@ -256,7 +202,7 @@ git config --global credential.helper wincred
 
 使用如下错误命令及参数修改配置
 
-```
+```sh
 git config --global user.name = "M1kewang"
 ```
 
@@ -264,7 +210,7 @@ git config --global user.name = "M1kewang"
 
 这样配置的结果就是产生了两条user.name，如下
 
-```
+```sh
 git config -l
 
 user.name=magi
@@ -277,7 +223,7 @@ user.name==
 
 #### 具体报错
 
-```
+```sh
 warning: user.name has multiple values
 error: cannot overwrite multiple values with a single value
        Use a regexp, --add or --replace-all to change user.name.
@@ -287,7 +233,7 @@ error: cannot overwrite multiple values with a single value
 
 先看一下git存在哪些配置参数
 
-```
+```sh
 git config
 ```
 
@@ -295,13 +241,13 @@ git config
 
 但是尝试这样修改，并不理想，会提示你要修改的属性存在多条记录
 
-```
+```sh
 warning: user.name has multiple values
 ```
 
 正确的方法应该是对这个属性进行批量操作，即对所有同名的属性值进行修改
 
-```
+```sh
 git config --global --replace-all user.name M1kewang
 ```
 
@@ -315,7 +261,7 @@ git config --global --replace-all user.name M1kewang
 
 ###### 查找提交历史
 
-```
+```sh
 git log
 ```
 
@@ -323,7 +269,7 @@ git log
 
 ![gitlog](https://private-user-images.githubusercontent.com/23159565/244940872-8a86dee9-ee82-4b7f-a073-bccd8cf339f5.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg2NDkwODcwLCJuYmYiOjE2ODY0OTA1NzAsInBhdGgiOiIvMjMxNTk1NjUvMjQ0OTQwODcyLThhODZkZWU5LWVlODItNGI3Zi1hMDczLWJjY2Q4Y2YzMzlmNS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNjExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDYxMVQxMzM2MTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hOGY0NTRkMmFhMDZiM2E5ZGEwNmMyMmM3MTA3Y2ViMDY4YzcyYTk0ZjBiMGQ3MGMwYTdlYTk0YWQyN2E2YWY4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.4EJKIfEGQfpTCJElDuTNFQmYnKWfWG1yGK_3m0lZuUM)
 
-```
+```sh
 git reset [<mode>] [<commit>]
 ```
 
@@ -337,7 +283,7 @@ git reset c9061153d10be3683762c5301ba9afce586935a6
 
 将修改放进临时存储，切换分支，将临时存储中内容倒出
 
-```
+```sh
 git stash
 git checkout -b new-branch
 git stash pop
@@ -345,18 +291,17 @@ git stash pop
 
 ![gitstash](https://private-user-images.githubusercontent.com/23159565/244940877-a8349790-04d3-4408-90f4-3c84890dcccb.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg2NDkwODcwLCJuYmYiOjE2ODY0OTA1NzAsInBhdGgiOiIvMjMxNTk1NjUvMjQ0OTQwODc3LWE4MzQ5NzkwLTA0ZDMtNDQwOC05MGY0LTNjODQ4OTBkY2NjYi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNjExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDYxMVQxMzM2MTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00ZmU2OWViZTVlNTEzZTQxMmJhMWEwNzA3MjRiY2I2YzhmNWEyNjc5MmZiMWY1OWM1NTBlOWYxMjY2OTFhZGRiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.2QFZ7BCRqlqhUaRFmiWfQLwbj2pmdSy0JLYWqwjvT9s)
 
-
 ##### 撤销最近版本（上次提交 或 上上次）
 
 ###### 回到上次提交后的状态（即撤销本次提交commit）
 
-```
+```sh
 git reset HEAD^
 ```
 
 或
 
-```
+```sh
 git reset HEAD~1
 ```
 
@@ -364,7 +309,7 @@ git reset HEAD~1
 
 回到上上次，则为
 
-```
+```sh
 git reset HEAD~2
 ```
 
@@ -372,25 +317,25 @@ git reset HEAD~2
 
 #### 先拉下项目，可以看到git提交记录，查看当前的远程仓库
 
-```
+```sh
 git remote -v
 ```
 
 #### 修改远程仓库地址
 
-```
+```sh
 git remote set-url origin(远程连接名称) git@47.98.34.171:codemonkeys/cm-server.git(新的远程仓库地址) git@gitee.com:code-monkeys/code-monkeys.git(旧的远程仓库地址)
 ```
 
 #### 拉取新的远程仓库代码
 
-```
+```sh
 git pull
 ```
 
 #### 会提示本地拒绝合并未关联的历史提交
 
-```
+```sh
 warning: no common commits
 remote: Enumerating objects: 3, done.
 remote: Counting objects: 100% (3/3), done.
@@ -404,13 +349,13 @@ fatal: refusing to merge unrelated histories
 
 #### 可添加`--allow-unrelated-histories`参数允许合并未关联的提交记录
 
-```
+```sh
 git pull --allow-unrelated-histories
 ```
 
 #### 然后会自动合并新的远程仓库和本地的git项目，如果有冲突会提示解决
 
-```
+```sh
 Auto-merging README.md
 CONFLICT (add/add): Merge conflict in README.md
 Automatic merge failed; fix conflicts and then commit the result.
@@ -418,7 +363,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 #### 提交远程
 
-```
+```sh
 git push origin master
 ```
 
@@ -445,13 +390,9 @@ git push origin master
 > Maximum size in bytes of the buffer used by smart HTTP transports when POSTing data to the remote system.
 For requests larger than this buffer size, HTTP/1.1 and Transfer-Encoding: chunked is used to avoid creating a massive pack file locally. Default is 1 MiB, which is sufficient for most requests.
 
-```
+```sh
 git config --global http.postBuffer 1048576000
 ```
-
-### git for windows
-
-- [下载链接](https://npm.taobao.org/mirrors/git-for-windows)
 
 ## Github
 
@@ -461,25 +402,25 @@ git config --global http.postBuffer 1048576000
 
 2. Add your files to git.
 
-```
+```sh
 git add .
 ```
 
 3. Commit your added files to the stage area.
 
-```
+```sh
 git commit -m "write your comment"
 ```
 
 4. Link your local git project with your GitHub repository.
 
-```
+```sh
 git remote add origin https://github.com/youraccount/yourrepository.git
 ```
 
 5. Pull the existed files of your current GitHub repository.
 
-```
+```sh
 git pull origin master
 ```
 
@@ -487,7 +428,7 @@ git pull origin master
 
 7. Push your local project managed by git to your remote GitHub repository.
 
-```
+```sh
 git push -u origin master
 ```
 
@@ -509,7 +450,7 @@ nameserver lookup
 
 ### 查看某个包的可用版本
 
-```
+```sh
 npm view jquery versions
 ```
 
@@ -591,15 +532,15 @@ npm view jquery versions
 
 ### 科学上网
 
-```
+```sh
 wget –no-check-certificate  https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
 ```
 
-```
+```sh
 chmod +x shadowsocks.sh
 ```
 
-```
+```sh
 ./shadowsocks.sh 2>&1 | tee shadowsocks.log
 ```
 
@@ -675,10 +616,9 @@ chmod +x shadowsocks.sh
 - [中文字体压缩器](http://font-spider.org/)
 - [es5内置对象](https://www.w3.org/html/ig/zh/wiki/ES5/%E6%A0%87%E5%87%86_ECMAScript_%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1#x15.1.3.1)
 
-### Mooc 
+### Mooc
 
 - [frontendmasters](https://frontendmasters.com/)
 - [front-end-handbook](https://frontendmasters.com/books/front-end-handbook/2018/2018.html)
 - [composing-software](https://medium.com/javascript-scene/composing-software-an-introduction-27b72500d6ea)
 - [edx](https://www.edx.org/course/how-code-simple-data-ubcx-htc1x)
-

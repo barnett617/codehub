@@ -1,9 +1,11 @@
 # cyberslacking
-Cyberslacking refers to employees who use their work internet access for personal reasons while maintaining the appearance of working. 
+
+Cyberslacking refers to employees who use their work internet access for personal reasons while maintaining the appearance of working.
 
 ## 摸鱼法则
+
   1、摸鱼法则第一条：制造忙碌的工作状态
-    
+
     1.正中央是打开无数个任务窗口的电脑，必要的时候接一个大尺寸显示屏；
 
     2.左边是一本用不同颜色的荧光笔圈画得老妈都认不出的日历；

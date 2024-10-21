@@ -2,11 +2,11 @@
 
 ## PC
 
-- [MBP M1 2022](https://www.apple.com.cn/shop/buy-mac/macbook-pro/14-%E8%8B%B1%E5%AF%B8)
+- [MacBook Air M3 2024](https://www.apple.com.cn/shop/buy-mac/macbook-air/MXCV3CH/A)
 
 ## Mobile Phone
 
-- [iPhone12](https://www.apple.com.cn/shop/buy-iphone/iphone-12)
+- [iPhone14 Pro](https://www.apple.com.cn/shop/buy-iphone/iphone-14)
 
 ## Devices
 
@@ -15,6 +15,7 @@
 ## IDE
 
 - [VS Code](https://code.visualstudio.com/)
+- [Cursor](https://www.cursor.com/)
 
 ### Theme
 
@@ -33,7 +34,3 @@
 ## Shell
 
 - [oh-my-zsh](https://ohmyz.sh/)
-
-## Screen Saver
-
-- [Aerial](https://aerialscreensaver.github.io/)

@@ -1,4 +1,5 @@
 # good-sites
+
 Some good sites bookmarks
 
 ## 博客
@@ -41,26 +42,26 @@ Some good sites bookmarks
 
 ## Images or SVG
 
-- https://www.freepik.com/
-- https://undraw.co/illustrations
+- <https://www.freepik.com/>
+- <https://undraw.co/illustrations>
 
 ## SVG Tools
 
-- https://jakearchibald.github.io/svgomg/
+- <https://jakearchibald.github.io/svgomg/>
 
 ## SVG libraries
 
-- https://animejs.com/
-- https://greensock.com/
-- http://velocityjs.org/
+- <https://animejs.com/>
+- <https://greensock.com/>
+- <http://velocityjs.org/>
 
 ## Icons
 
-- https://heroicons.com/
+- <https://heroicons.com/>
 
 ## Development skills
 
-- https://roadmap.sh/
+- <https://roadmap.sh/>
 
 ## Image
 
@@ -70,5 +71,4 @@ Some good sites bookmarks
 
 ### Apple
 
-- https://howigotjob.com/articles/apple-interview-response-time/
-
+- <https://howigotjob.com/articles/apple-interview-response-time/>
